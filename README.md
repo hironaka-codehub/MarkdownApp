@@ -32,14 +32,38 @@ Works fully offline.
 - The renderer is sandboxed with context isolation and no Node.js access.
 - The page cannot choose file paths: saving writes only to the open file or a path picked in the Save As dialog, and opening files outside the Open dialog requires a one-time grant from the main process tied to real user input.
 
-## Run from source
+## Download
+
+Get the latest version from the [Releases](https://github.com/hironaka-codehub/MarkdownApp/releases/latest) page
+(Windows 10/11, 64-bit):
+
+| File | Use it if… |
+|---|---|
+| `MarkdownApp-<version>-setup.exe` | You want it installed: Start menu and desktop shortcuts, opens `.md` files on double-click, uninstall from **Settings → Apps**. No admin rights needed. |
+| `MarkdownApp-<version>-portable.exe` | You want a single file with no installation, e.g. on a USB stick. Starts a little slower. |
+
+The files are not code-signed, so Windows may show **"Windows protected your PC"** the first time.
+Click **More info → Run anyway**.
+
+## Getting started (from source)
+
+### Requirements
+
+- Windows 10 or 11 (64-bit)
+- [Node.js](https://nodejs.org/) **22.12 or newer** (the current LTS works)
+- [Git](https://git-scm.com/) (optional; you can use **Code → Download ZIP** instead)
+
+### Run
 
 ```powershell
+git clone https://github.com/hironaka-codehub/MarkdownApp.git
+cd MarkdownApp
 npm install
 npm start
 ```
 
-Open a specific file: `npm start -- path\to\file.md`
+`npm install` downloads Electron (about 100 MB) the first time. To open a specific file:
+`npm start -- path\to\file.md`
 
 ## Build
 
