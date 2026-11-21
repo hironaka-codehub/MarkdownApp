@@ -79,3 +79,11 @@ All three keep settings in `%APPDATA%\MarkdownApp`. The builds are not code-sign
 SmartScreen may warn on first run ("More info → Run anyway").
 
 For the folder build, to open `.md` files from Explorer use **Open with → Choose another app → MarkdownApp.exe**.
+
+## License
+
+[MIT](LICENSE) © hironaka-codehub
+
+Bundled third-party components keep their own licenses: [Electron](https://github.com/electron/electron) (MIT),
+[marked](https://github.com/markedjs/marked) (MIT) and [DOMPurify](https://github.com/cure53/DOMPurify)
+(Apache-2.0 or MPL-2.0).

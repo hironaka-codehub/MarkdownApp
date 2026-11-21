@@ -12,7 +12,8 @@
     "build:portable": "electron-builder --win portable --x64 -c.directories.output=release/portable",
     "build:installer": "electron-builder --win nsis --x64 -c.directories.output=release/installer"
   },
-  "author": "MarkdownApp",
+  "author": "hironaka-codehub",
+  "license": "MIT",
   "build": {
     "appId": "com.markdownapp.editor",
     "productName": "MarkdownApp",
