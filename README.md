@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/icon.png" width="128" alt="MarkdownApp icon"></p>
+
 # MarkdownApp
 
 A simple Markdown editor and viewer for Windows: editor on the left, live preview on the right.

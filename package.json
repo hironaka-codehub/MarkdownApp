@@ -8,7 +8,7 @@
   "scripts": {
     "start": "electron .",
     "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js && node --check src/help.js",
-    "package": "electron-packager . MarkdownApp --platform=win32 --arch=x64 --out=dist --overwrite --asar --ignore=\"^/dist\" --ignore=\"^/release\" --ignore=\"^/\\.claude\"",
+    "package": "electron-packager . MarkdownApp --platform=win32 --arch=x64 --out=dist --overwrite --asar --icon=build/icon.ico --ignore=\"^/build\" --ignore=\"^/dist\" --ignore=\"^/release\" --ignore=\"^/\\.claude\"",
     "build:portable": "electron-builder --win portable --x64 -c.directories.output=release/portable",
     "build:installer": "electron-builder --win nsis --x64 -c.directories.output=release/installer"
   },
@@ -23,6 +23,7 @@
       "package.json"
     ],
     "win": {
+      "icon": "build/icon.ico",
       "target": [
         "portable",
         "nsis"

@@ -141,6 +141,8 @@ function isSafeExternal(url) {
   }
 }
 
+const APP_ICON = path.join(__dirname, '..', 'assets', 'icon.png');
+
 const secureWebPreferences = () => ({
   preload: path.join(__dirname, 'preload.js'),
   contextIsolation: true,
@@ -170,6 +172,7 @@ function openHelp() {
     minWidth: 400,
     minHeight: 300,
     title: `Markdown Syntax Guide — ${APP_NAME}`,
+    icon: APP_ICON,
     autoHideMenuBar: true,
     show: false,
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#1e1e1e' : '#ffffff',
@@ -191,6 +194,7 @@ function createWindow() {
     minWidth: 500,
     minHeight: 300,
     title: APP_NAME,
+    icon: APP_ICON,
     show: false,
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#1e1e1e' : '#ffffff',
     webPreferences: secureWebPreferences(),
