@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' file: data: https: http:; font-src 'self'"
+    />
+    <title>MarkdownApp</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="mode-split">
+    <main id="workspace">
+      <section id="editor-pane" class="pane">
+        <textarea id="editor" spellcheck="false" autocomplete="off" wrap="soft" aria-label="Markdown editor"></textarea>
+      </section>
+      <div id="divider" role="separator" aria-orientation="vertical" title="Drag to resize"></div>
+      <section id="preview-pane" class="pane">
+        <article id="preview" class="markdown-body" aria-label="Preview"></article>
+      </section>
+    </main>
+    <footer id="status">
+      <span id="status-path">Untitled</span>
+      <span class="spacer"></span>
+      <span id="status-pos">Ln 1, Col 1</span>
+      <span id="status-words">0 words</span>
+      <span id="status-state">Saved</span>
+    </footer>
+    <div id="drop-hint" hidden>Drop a Markdown file to open it</div>
+
+    <script src="../node_modules/marked/lib/marked.umd.js"></script>
+    <script src="../node_modules/dompurify/dist/purify.min.js"></script>
+    <script src="renderer.js"></script>
+  </body>
+</html>

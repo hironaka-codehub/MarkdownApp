@@ -1,0 +1,67 @@
+{
+  "name": "markdownapp",
+  "productName": "MarkdownApp",
+  "version": "1.0.0",
+  "description": "A simple Markdown editor and viewer for Windows",
+  "main": "src/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check src/main.js && node --check src/preload.js && node --check src/renderer.js && node --check src/help.js",
+    "package": "electron-packager . MarkdownApp --platform=win32 --arch=x64 --out=dist --overwrite --asar --ignore=\"^/dist\" --ignore=\"^/release\" --ignore=\"^/\\.claude\"",
+    "build:portable": "electron-builder --win portable --x64 -c.directories.output=release/portable",
+    "build:installer": "electron-builder --win nsis --x64 -c.directories.output=release/installer"
+  },
+  "author": "MarkdownApp",
+  "build": {
+    "appId": "com.markdownapp.editor",
+    "productName": "MarkdownApp",
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "samples/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "portable",
+        "nsis"
+      ]
+    },
+    "portable": {
+      "artifactName": "MarkdownApp-${version}-portable.exe"
+    },
+    "nsis": {
+      "artifactName": "MarkdownApp-${version}-setup.exe",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MarkdownApp"
+    },
+    "fileAssociations": [
+      {
+        "ext": [
+          "md",
+          "markdown"
+        ],
+        "name": "Markdown",
+        "description": "Markdown document",
+        "role": "Editor"
+      }
+    ]
+  },
+  "dependencies": {
+    "dompurify": "^3.4.18",
+    "marked": "^18.2.1"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0"
+  },
+  "allowScripts": {
+    "electron@45.4.1": true
+  }
+}

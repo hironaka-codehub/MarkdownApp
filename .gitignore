@@ -1,0 +1,17 @@
+# dependencies and build output
+node_modules/
+dist/
+release/
+
+# local-only project notes (not published)
+SPEC.md
+.claude/
+
+# OS / editor clutter
+Thumbs.db
+Desktop.ini
+.vscode/
+*.log
+
+# personal scratch documents
+Untitled.md
